@@ -11,8 +11,7 @@ const InputControlled = () => {
         setPrenom(event.target.value);
     };
     const changeNom =(event)=>{
-                setNom(event.target.value);
-
+        setNom(event.target.value);
     };
     return (
         <div>

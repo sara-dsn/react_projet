@@ -8,7 +8,7 @@ const ParentComponent = () => {
     return (
         <div>
             <h2>Je suis le composant Parent</h2>
-            <ChildComponent message="Message du Parent"/>
+            <ChildComponent message="Message du Parent "/>
         </div>
 
     );

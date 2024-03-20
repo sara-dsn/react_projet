@@ -1,0 +1,41 @@
+Exercice
+
+Étudiez le code de ce composant. 
+À quel moment se déclenchent les différents useEffect ? À CHAQUE CHANGEMENT DE NOMBRE.(useEffect1 la premiere fois, useEffect2 les fois suivantes)
+
+//ON IMPORTE CE DONT ON A BESOIN:
+import {React, useState, useEffect} from 'react';
+
+//CREATION FONCTION App (QUI PEUT PRENDRE PROPS):
+const App = (props) => {
+
+    //INITIALISATION NOMBRE À ZÉRO, ET PEUT AUGMENTER SELON EVENEMENT:
+  const [nombre, setNombre] = useState(0);
+
+
+//AFFICHE "useEffect2" DANS CONSOLE À CHAQUE CHANGEMENT DE NOMBRE:
+  useEffect(() => {
+      console.log("useEffect 2 ...")
+  }, [nombre])
+
+//AFFICHE "useEffect1" DANS CONSOLE , UNE UNIQUE FOIS , AU DÉBUT:
+  useEffect(() => {
+      console.log("useEffect 1 ...")
+  }, [])
+
+//À CHAQUE CLIQUE ->NOUVEAU NOMBRE (ENTRE 0 ET 1):
+  const handleClick1 = () => {
+      setNombre(Math.random());
+  }
+
+  return (
+      <>
+          <div>
+              {nombre}
+          </div>
+          <button onClick={handleClick1}>nouveau nombre</button>
+      </>
+  );
+}
+
+export default App ;
